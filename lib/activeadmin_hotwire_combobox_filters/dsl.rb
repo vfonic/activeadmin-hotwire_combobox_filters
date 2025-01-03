@@ -31,7 +31,8 @@ module ActiveAdminHotwireComboboxFilters
 
           @combobox_results = @records.pluck(method, :id)
           @next_page = @records.next_page
-          render "activeadmin_hotwire_combobox_filters/combobox_search", locals: { combobox_results: @combobox_results, next_page: @next_page }
+          render "activeadmin_hotwire_combobox_filters/combobox_search",
+                 locals: { combobox_results: @combobox_results, next_page: @next_page }
         end
 
         instance_exec(&block) if block

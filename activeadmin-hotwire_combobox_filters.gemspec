@@ -1,5 +1,5 @@
 Gem::Specification.new do |spec|
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 3.0" # rubocop:disable Gemspec/RequiredRubyVersion
   spec.name        = "activeadmin-hotwire_combobox_filters"
   spec.version     = "0.1.0"
   spec.authors     = ["Viktor Fonic"]

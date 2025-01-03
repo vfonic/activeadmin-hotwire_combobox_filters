@@ -1,0 +1,10 @@
+inherit_gem:
+  stylecheck: config/rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.4
+
+Rails/EnvironmentVariableAccess:
+  AllowReads: true
+Layout/LineLength:
+  Max: 140

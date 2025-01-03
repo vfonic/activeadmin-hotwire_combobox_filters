@@ -7,7 +7,7 @@ module ActiveAdminHotwireComboboxFilters
 
         if async_src && associated_object
           associated_object.to_combobox_display
-        elsif async_src && form_object&.respond_to?(name)
+        elsif async_src && form_object&.respond_to?(name) # rubocop:disable Lint/RedundantSafeNavigation
           form_object.public_send name
         # special case for filtering Ransack::Search object
         elsif async_src && !form_object&.public_send(name).nil?
