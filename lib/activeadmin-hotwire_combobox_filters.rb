@@ -18,4 +18,6 @@ module ActiveAdminHotwireComboboxFilters
   end
 end
 
-require "activeadmin_hotwire_combobox_filters/inputs/select_input"
+require "activeadmin_hotwire_combobox_filters/inputs/filters_select_input"
+require "activeadmin_hotwire_combobox_filters/inputs/hotwire_combobox_input"
+require "activeadmin_hotwire_combobox_filters/form_builder_extension"
