@@ -16,7 +16,7 @@ GIT
 PATH
   remote: .
   specs:
-    activeadmin-hotwire_combobox_filters (0.1.0)
+    activeadmin-hotwire_combobox_filters (1.0.0)
       activeadmin (~> 4.0.0.beta7)
       hotwire_combobox
       rails (>= 7.0)
