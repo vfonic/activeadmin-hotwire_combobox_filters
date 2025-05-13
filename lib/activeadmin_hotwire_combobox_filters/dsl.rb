@@ -26,6 +26,7 @@ module ActiveAdminHotwireComboboxFilters
                   "No display method found for #{resource_class.name}. Methods searched: #{DISPLAY_NAME_METHODS.join(', ')}"
           end
 
+          current_user = send(ActiveAdmin.application.current_user_method)
           @records = Pundit.policy_scope!(current_user, resource_class).ransack("#{method}_cont" => params[:q]).result
                            .page(params[:page]).per(Kaminari.config.default_per_page)
 
