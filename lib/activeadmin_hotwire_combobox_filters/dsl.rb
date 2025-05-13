@@ -27,8 +27,10 @@ module ActiveAdminHotwireComboboxFilters
           end
 
           current_user = send(ActiveAdmin.application.current_user_method)
-          @records = Pundit.policy_scope!(current_user, resource_class).ransack("#{method}_cont" => params[:q]).result
-                           .page(params[:page]).per(Kaminari.config.default_per_page)
+          @records = Pundit.policy_scope!(current_user, resource_class)
+          @records = @records.ordered if resource_class.respond_to?(:ordered)
+          @records = @records.ransack("#{method}_cont" => params[:q]).result if params[:q].present?
+          @records = @records.page(params[:page]).per(Kaminari.config.default_per_page)
 
           @combobox_results = @records.pluck(method, :id)
           @next_page = @records.next_page
